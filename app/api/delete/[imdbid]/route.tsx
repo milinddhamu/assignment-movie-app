@@ -3,7 +3,7 @@ import connectMongoDb from "@/lib/mongodb";
 import mongoose from "mongoose";
 
 type Params = {
-  page: string;
+  imdbid: string;
 };
 
 export async function DELETE(request: Request, { params }: { params: Params }) {

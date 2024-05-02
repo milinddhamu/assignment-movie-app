@@ -2,6 +2,7 @@ import MovieCard from "./MovieCard";
 import { movies } from "@/data/data";
 import {Skeleton} from "@/components/ui/skeleton"
 import { Movie } from "@/types/Movie";
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 interface MoviesListProps {
   data: Movie[];
@@ -9,8 +10,9 @@ interface MoviesListProps {
 }
 
 const MoviesList = ({data,handleDeleteMovie}: MoviesListProps) => {
+  const [parent] = useAutoAnimate()
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 w-full gap-1">
+    <div ref={parent} className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 w-full gap-1">
       {data.length !== 0 ? data.map((movie,i)=> 
         <div className="flex w-full h-full" key={movie.imdbid}>
           <MovieCard movie={movie} handleDeleteMovie={handleDeleteMovie} />

@@ -9,7 +9,7 @@ import {Button} from "@/components/ui/button"
 import { notFound } from 'next/navigation';
 
 async function getData(movieId:string) {
-  const res = await fetch(`/api/movie/${movieId}`, {
+  const res = await fetch(`http://assignment-movie-app-gamma.vercel.app/api/movie/${movieId}`, {
     method: 'GET',
   })
   if (res.ok) {

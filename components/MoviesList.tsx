@@ -10,7 +10,7 @@ interface MoviesListProps {
 }
 
 const MoviesList = ({data,handleDeleteMovie}: MoviesListProps) => {
-  const [parent] = useAutoAnimate()
+  const [parent] = useAutoAnimate();
   return (
     <div ref={parent} className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 w-full gap-1">
       {data.length !== 0 ? data.map((movie,i)=> 

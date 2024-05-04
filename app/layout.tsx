@@ -4,7 +4,7 @@ import { Inter as FontSans } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
-
+import Navbar from "@/components/navbar"
 // TypeScript
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -31,6 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
         >
           <main>
+          <Navbar />
           {children}
           </main>
           <Toaster />

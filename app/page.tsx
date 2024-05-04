@@ -12,7 +12,6 @@ export default function Home() {
   const [page,setPage] = useState(0);
   const { toast } = useToast();
 
-
   const handleNextPage = () => setPage(prev => prev !== 5 ? prev + 1 : prev)
   useEffect(()=>{
     const fetchData = async () => {
@@ -28,7 +27,7 @@ export default function Home() {
     })
     .then((response) => {
       if (response.ok) {
-        setMovies(prev => prev.filter(m => m.imdbid !== imdbid));
+        setMovies(movies.filter(m => m.imdbid !== imdbid));
         toast({
           title: "Movie deleted Successfuly",
           description: "Movie has been deleted successly from collection",

@@ -9,9 +9,7 @@ import {Button} from "@/components/ui/button"
 import { notFound } from 'next/navigation';
 
 async function getData(movieId:string) {
-  const url = process.env.BASE_URL;
-  console.log(url)
-  const res = await fetch(`${url}/api/movie/${movieId}`, {
+  const res = await fetch(`/api/movie/${movieId}`, {
     method: 'GET',
   })
   if (res.ok) {
